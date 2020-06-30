@@ -22,13 +22,13 @@ namespace trangle
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////            
 
-            int firstNumberStart = 0;         //1st number's starting number
+            int firstNumberStart = 0;        //1st number's starting number
             int firstNumberAmount = 100;     //How many 1st number you want to loop
 
-            int secondNumberStart = 0;        //2nd number's starting number
-            int secondNumberAmount = 100;       //choose how many 2nd number you want to loop (this also is the amount of data on console)
+            int secondNumberStart = 0;       //2nd number's starting number
+            int secondNumberAmount = 100;    //choose how many 2nd number you want to loop (this also is the amount of data on console)
 
-            int thirdNumber = 3;       //choose the third number
+            int thirdNumber = 3;             //choose the third number
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
