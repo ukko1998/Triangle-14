@@ -1,0 +1,94 @@
+using System;
+using System.Xml.Schema;
+
+namespace trangle
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            int count = 0;
+
+            int pros = 0;
+            int x;
+            int sum;
+
+            double include = 0;
+            double doesnt = 0;
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////            
+
+            int firstNumberStart = 0;         //1st number's starting number
+            int firstNumberAmount = 100;     //How many 1st number you want to loop
+
+            int secondNumberStart = 0;        //2nd number's starting number
+            int secondNumberAmount = 100;       //choose how many 2nd number you want to loop (this also is the amount of data on console)
+
+            int thirdNumber = 3;       //choose the third number
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            while (pros < secondNumberAmount) 
+            {
+                while (count < firstNumberAmount)
+                {
+                    x = firstNumberStart + count;
+                    int y = secondNumberStart + pros;
+                    int z = thirdNumber;         
+
+
+
+                    for (int i = 0;; i++)
+                    {
+
+
+                        sum = x + y + z;
+                        if (sum == 14)
+                        {
+                            include += 1;
+                            goto pois;
+                        }
+
+                        int xx = Math.Abs(x - y);
+                        int yy = Math.Abs(y - z);
+                        int zz = Math.Abs(z - x);
+
+                        int xforth = Math.Abs(Math.Abs(Math.Abs(Math.Abs(x - y) - Math.Abs(y - z)) - Math.Abs(Math.Abs(y - z) - Math.Abs(z - x))) - Math.Abs(Math.Abs(Math.Abs(y - z) - Math.Abs(z - x)) - Math.Abs(Math.Abs(z - x) - Math.Abs(x - y))));
+                        int yforth = Math.Abs(Math.Abs(Math.Abs(Math.Abs(y - z) - Math.Abs(z - x)) - Math.Abs(Math.Abs(z - x) - Math.Abs(x - y))) - Math.Abs(Math.Abs(Math.Abs(z - x) - Math.Abs(x - y)) - Math.Abs(Math.Abs(x - y) - Math.Abs(y - z))));
+                        int zforth = Math.Abs(Math.Abs(Math.Abs(Math.Abs(z - x) - Math.Abs(x - y)) - Math.Abs(Math.Abs(x - y) - Math.Abs(y - z))) - Math.Abs(Math.Abs(Math.Abs(x - y) - Math.Abs(y - z)) - Math.Abs(Math.Abs(y - z) - Math.Abs(z - x))));
+
+                        x = xx;
+                        y = yy;
+                        z = zz;
+
+                        if (xforth == x && yforth == y && zforth == z)
+                        {
+                            doesnt += 1;
+                            goto pois;
+                        }
+
+                    }
+                pois:;
+                    count += 1;
+
+
+                }
+
+
+                Console.WriteLine($"14 was never sum {doesnt} times, {Math.Round(doesnt/firstNumberAmount*100, 2)}%         between:  ({firstNumberStart}-{firstNumberStart + firstNumberAmount} , {pros + secondNumberStart} , {thirdNumber})");
+                pros += 1;
+                count = 0;
+                include = 0;
+                doesnt = 0;
+
+            }
+
+
+        }
+    }
+}
